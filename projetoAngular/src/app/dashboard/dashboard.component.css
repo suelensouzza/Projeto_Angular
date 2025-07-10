@@ -1,0 +1,43 @@
+.dashboard {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .top-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .info-box {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 12px;
+    width: 180px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  }
+  
+  .car-image img {
+    width: 300px;
+    margin: 20px 0;
+  }
+  
+  table {
+    margin: 0 auto;
+    width: 90%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  

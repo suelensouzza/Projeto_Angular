@@ -1,55 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard FORD</title>
 </head>
 <body>
-    <div class="dashboard">
-        <h2>Dashboard FORD</h2>
-          
-            <div class="top-section">
-              <div>
-                <label for="veiculo">Veículo</label>
-                <select id="veiculo" [(ngModel)]="selectedCar" (change)="onChangeCar()">
-                  <option *ngFor="let car of cars" [value]="car.nome">{{ car.nome }}</option>
-                </select>
-              </div>
-          
-              <div *ngFor="let item of selectedCarData.metrics" class="info-box">
-                <h4>{{ item.title }}</h4>
-                <p>{{ item.value }} Unidades</p>
-              </div>
-            </div>
-          
-            <div class="car-image">
-              <img [src]="selectedCarData.image" alt="Imagem do carro" />
-            </div>
-          
-            <table>
-              <thead>
-                <tr>
-                  <th>Código - Vin</th>
-                  <th>Odômetro</th>
-                  <th>Nível de Combustível</th>
-                  <th>Status</th>
-                  <th>Lat.</th>
-                  <th>Longo.</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{{ selectedCarData.vin }}</td>
-                  <td>{{ selectedCarData.odom }}</td>
-                  <td>{{ selectedCarData.fuel }}</td>
-                  <td>{{ selectedCarData.status }}</td>
-                  <td>{{ selectedCarData.lat }}</td>
-                  <td>{{ selectedCarData.long }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-      
+  <header class="dashboard-header">
+    <img src="img/ford.png" alt="Logo Ford" class="logo" />
+    <h1>Dashboard FORD</h1>
+  </header>
+
+  <main class="dashboard-container">
+    <div class="dados">
+      <div class="box">
+        <p>Veículo</p>
+        <select>
+          <option>Ranger</option>
+          <option>Mustang</option>
+          <option>Territory</option>
+          <option>Bronco Sport</option>
+        </select>
+      </div>
+      <div class="box">
+        <p>Total de Vendas</p>
+        <h3>1500 <span style="font-size: 14px;">unid.</span></h3>
+      </div>
+      <div class="box">
+        <p>Conectados</p>
+        <h3>500 <span style="font-size: 14px;">unid.</span></h3>
+      </div>
+      <div class="box">
+        <p>Update Software</p>
+        <h3>750 <span style="font-size: 14px;">unid.</span></h3>
+      </div>
+    </div>
+
+    <div class="carro-img">
+      <img src="img/mustang.png" alt="Carro Mustang" />
+    </div>
+
+    <div class="tabela-dados">
+      <table>
+        <thead>
+          <tr>
+            <th>Código - Vin</th>
+            <th>Odômetro</th>
+            <th>Nível de Combustível</th>
+            <th>Status</th>
+            <th>Lat</th>
+            <th>Long</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRD45678XYZ</td>
+            <td>50000 km</td>
+            <td>96%</td>
+            <td>Ativo</td>
+            <td>-12.2222</td>
+            <td>-45.2214</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
 </body>
 </html>

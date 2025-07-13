@@ -1,17 +1,18 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Veiculo, VinInfos } from '../models/veiculos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = "http://localhost:3001/"
-  private http = inject(HttpClient);
+    http = inject(HttpClient)
+    getVeiculos(): Observable<Veiculo[]> {
+      return this.http.get<Veiculo[]>('http://localhost:3001/vehicles')
+    }
 
-  constructor() { }
-
-  buscarVeiculo(){
-    this.http.get(`${this.apiUrl}`);
+    getVinInfos(vin: string) {
+      return this.http.post<VinInfos>('http://localhost:3001/vehicleData', { vin })
+   }
   }
-
-}
